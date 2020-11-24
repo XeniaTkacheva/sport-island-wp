@@ -1,0 +1,30 @@
+{
+  "name": "xeniaweb/sport-island",
+  "description": "WordPress Theme for Sport Club",
+  "minimum-stability": "stable",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Oksana - XeniaWeb",
+      "email": "info@xeniaweb.ch"
+    }
+  ],
+  "require": {
+    "johnpbloch/wordpress": "^5.5",
+    "wpackagist-plugin/advanced-custom-fields": "^5.9",
+    "wpackagist-plugin/contact-form-7": "^5.3",
+    "wpackagist-plugin/cyr2lat": "^4.5"
+  },
+  "repositories":[
+    {
+      "type":"composer",
+      "url":"https://wpackagist.org"
+    }
+  ],
+  "extra": {
+    "installer-paths": {
+      "wordpress/wp-content/plugins/{$name}/": ["type:wordpress-plugin"],
+      "wordpress/wp-content/themes/{$name}/": ["type:wordpress-theme"]
+    }
+  }
+}
