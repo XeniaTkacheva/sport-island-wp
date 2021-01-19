@@ -6,14 +6,10 @@ class Orti_Widget_Text extends WP_Widget {
 		parent::__construct(
 			'orti_widget_text',
 			esc_html__( 'ORTI - Text widget' ),
-			[
-				'name'        =>  'ORTI - Text widget',
+            [
+				'name'        => esc_html__( 'ORTI - Text widget', 'orti' ),
 				'description' => esc_html__( 'Print easy text without markup', 'orti' )
 			]
-//            [
-//				'name'        => esc_html__( 'ORTI - Text widget', 'orti' ),
-//				'description' => esc_html__( 'Print easy text without markup', 'orti' )
-//			]
 		);
 	}
 

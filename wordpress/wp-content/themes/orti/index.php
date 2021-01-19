@@ -13,6 +13,7 @@
  */
 
 get_header();
+if (is_home()):
 ?>
     <main class="main-content">
     <h1 class="sr-only">Страница категорий блога на сайте спорт-клуба SportIsland</h1>
@@ -113,4 +114,9 @@ get_header();
     </main>
 
 	<?php
+else:
+    ?>
+    <p>Непонятно что</p>
+    <?php
+endif;
 	get_footer();

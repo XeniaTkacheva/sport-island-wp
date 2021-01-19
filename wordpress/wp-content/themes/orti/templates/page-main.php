@@ -22,7 +22,8 @@ get_header();
                 <a href="blog.html" class="about__link btn">подробнее</a>
             </div>
             <figure class="about__thumb">
-                <img src="<?php echo orti_assets_path( 'img/index__about_img.jpg' ); ?>" alt="Power lifter">
+<!--                <img src="--><?php //echo orti_assets_path( 'img/index__about_img.jpg' ); ?><!--" alt="Power lifter">-->
+                <img src="<?php echo esc_url(ORTI_IMG_DIR  ); ?>index__about_img.jpg" alt="Power lifter">
             </figure>
         </div>
     </article>

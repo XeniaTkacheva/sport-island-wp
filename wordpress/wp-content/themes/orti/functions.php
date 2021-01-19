@@ -49,10 +49,10 @@ if ( ! function_exists( 'orti_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
-			array(
+			[
 				'menu-header' => esc_html__( 'Menu in header', 'orti' ),
 				'menu-footer' => esc_html__( 'Menu in footer', 'orti' ),
-			)
+			]
 		);
 
 		/*
@@ -61,7 +61,7 @@ if ( ! function_exists( 'orti_setup' ) ) :
 		 */
 		add_theme_support(
 			'html5',
-			array(
+			[
 				'search-form',
 				'comment-form',
 				'comment-list',
@@ -69,7 +69,7 @@ if ( ! function_exists( 'orti_setup' ) ) :
 				'caption',
 				'style',
 				'script',
-			)
+			]
 		);
 
 		// Set up the WordPress core custom background feature.
@@ -77,10 +77,10 @@ if ( ! function_exists( 'orti_setup' ) ) :
 			'custom-background',
 			apply_filters(
 				'orti_custom_background_args',
-				array(
+				[
 					'default-color' => 'ffffff',
 					'default-image' => '',
-				)
+				]
 			)
 		);
 
@@ -94,12 +94,12 @@ if ( ! function_exists( 'orti_setup' ) ) :
 		 */
 		add_theme_support(
 			'custom-logo',
-			array(
+			[
 				'height'      => 200,
 				'width'       => 20,
 				'flex-width'  => true,
 				'flex-height' => true,
-			)
+			]
 		);
 	}
 endif;
@@ -125,24 +125,73 @@ add_action( 'after_setup_theme', 'orti_content_width', 0 );
  */
 function orti_widgets_init() {
 	register_sidebar(
-		array(
-			'name'          => esc_html__( 'Sidebar', 'orti' ),
-			'id'            => 'sidebar-1',
+		[
+			'name'          => esc_html__( 'Footer bar: Column 1', 'orti' ),
+			'id'            => 'orti-footer-col-1',
 			'description'   => esc_html__( 'Add widgets here.', 'orti' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
-		)
+		]
 	);
 	register_sidebar(
-		array(
+		[
+			'name'          => esc_html__( 'Footer bar: Column 2', 'orti' ),
+			'id'            => 'orti-footer-col-2',
+			'description'   => esc_html__( 'Add widgets here.', 'orti' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		]
+	);
+	register_sidebar(
+		[
+			'name'          => esc_html__( 'Footer bar: Column 3', 'orti' ),
+			'id'            => 'orti-footer-col-3',
+			'description'   => esc_html__( 'Add widgets here.', 'orti' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		]
+	);
+	register_sidebar(
+		[
 			'name'          => esc_html__( 'Contacts in header', 'orti' ),
 			'id'            => 'orti-contacts-header',
 			'description'   => esc_html__( 'Add contacts here.', 'orti' ),
 			'before_widget' => '<address class="main-header__widget widget-contacts %2$s">',
 			'after_widget'  => '</address>',
-		)
+		]
+	);
+	register_sidebar(
+		[
+			'name'          => esc_html__( 'Contacts in footer', 'orti' ),
+			'id'            => 'orti-contacts-footer',
+			'description'   => esc_html__( 'Add contacts here.', 'orti' ),
+			'before_widget' => null,
+			'after_widget'  => null,
+		]
+	);
+	register_sidebar(
+		[
+			'name'          => esc_html__( 'Map frame', 'orti' ),
+			'id'            => 'orti-map-frame',
+			'description'   => esc_html__( 'Add contacts here.', 'orti' ),
+			'before_widget' => null,
+			'after_widget'  => null,
+		]
+	);
+	register_sidebar(
+		[
+			'name'          => esc_html__( 'Map bar', 'orti' ),
+			'id'            => 'orti-map-bar',
+			'description'   => esc_html__( 'Add contacts here.', 'orti' ),
+			'before_widget' => null,
+			'after_widget'  => null,
+		]
 	);
 	register_widget( 'orti_widget_text' );
 }
